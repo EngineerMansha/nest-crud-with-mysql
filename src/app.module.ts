@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { User } from './typeorm/entities/User';
 // import { UsersModule } from './users/users.module';
 import { UsersModule } from './users/users.module';
+import { Entity } from 'typeorm';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { UsersModule } from './users/users.module';
       synchronize: true,
     }),
     UsersModule,
+    TypeOrmModule.forFeature([User]),
   ],
   controllers: [AppController],
   providers: [AppService],
